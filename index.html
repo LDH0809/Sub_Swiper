@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>서브페이지4</title>
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/c0421b8981.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    </head>
+    <body>
+        <div class ="wrap">
+        <h1><span>인제대학교 컴퓨터공학부 졸작</span></h1>
+
+        <ul class="auto">
+            <li class="btnStart"><i class="fas fa-play"></i></li>
+            <li class="btnStop"><i class="fas fa-pause"></i></li>
+        </ul>
+        
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                    <img src="img/pic.1.PNG">
+                    <h2> image1 </h2>
+                    <p>image link:https://m.blog.naver.com/mong728/221482231370?view=img_10</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic.2.PNG">
+                        <h2> image2 </h2>
+                        <p>image link:https://m.blog.naver.com/mong728/221482231370?view=img_10</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic.3.PNG">
+                        <h2>image3</h2>
+                        <p>image link:https://m.blog.naver.com/mong728/221482231370?view=img_10</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <video src="img/visual.mp4" autoplay muted loop></video>
+                        <h2> video </h2>
+                        <p>video link  https://www.youtube.com/watch?v=Cm_qva8i8Q4</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic.5.PNG">
+                        <h2>image4</h2>
+                        <p>image link:https://m.blog.naver.com/mong728/221482231370?view=img_10</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <img src="img/pic.4.PNG">
+                    <h2>image5</h2>
+                    <p>image link:https://m.blog.naver.com/mong728/221482231370?view=img_10</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+
+        <script>
+            const swiper = new Swiper('.wrap', {
+            
+            direction: 'horizontal',//스와이프 방향
+             loop: true, //루프 여부
+
+            pagination: {
+            el: '.swiper-pagination',//페이지 메뉴 요소명
+            type: 'fraction'//페이지 버튼 대신 슬라이더 번호 출력
+            },
+
+            navigation: {
+            nextEl: '.swiper-button-next',//다음 버튼 요소명
+            prevEl: '.swiper-button-prev',//이전 버튼 요소명
+        },
+
+            spaceBetween: 0, // 패널 사이의 간격을 0px로 설정
+            slidesPerView: "auto", // CSS에 지정한 슬라이더의 크기를 반영
+            grabCursor: true, // 스와이프 시 마우스 포인터 모양 변경
+            centeredSlides: true, // 슬라이더 패널을 항상 가운데로 정렬
+            speed: 1000, // 슬라이더 이동 속도 지정
+
+            effect:"coverflow", //이펙트 효과 지정
+            coverflowEffect: {
+            rotate:50, //회전각도 지정
+            stretch: -100, //슬라이드 간의 당김 정도 지정
+            depth:400, //원근감 지정
+            modifier:1, //중첩 정도 지정
+            slideShadows: false, //슬라이드의 그림자 생성
+            },
+
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: true
+            }
+    });
+
+     //.btnStart 요소를 찾아서 btnStart에 저장
+     const btnStart=document.querySelector(".btnStart");
+     //.btnStop 요소를 찾아서 btnStop에 저장
+     const btnStop=document.querySelector(".btnStop");
+    
+     //btnStart 버튼을 클릭하면 자동 스와이프를 시작
+     btnStart.addEventListener("click",()=>{
+         swiper.autoplay.start();
+     });
+
+     //btnStart 버튼을 클릭하면 자동 스와이프 시작
+     btnStart.addEventListener("click", ()=>{
+        swiper.autoplay.start();
+     });
+
+     //btnStart 버튼을 클릭시 자동 스와이프를 정지
+     btnStop.addEventListener("click",()=>{
+         swiper.autoplay.stop();
+     });
+        </script>
+       </div>
+    </body>
+</html>
